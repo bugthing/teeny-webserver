@@ -1,5 +1,5 @@
-Teeny Webserver Container
-=========================
+Teeny Webserver
+===============
 
 If you need to transfer some secret data to some over the internet, you could do worse than provide
 a username and password to an SSL site.
@@ -10,7 +10,6 @@ Get SSL cert
 ------------
 
 For this used LetsEncrypt to get a cert.
-
 
 First I installed the script that does all the magic to get the cert.
 
@@ -23,7 +22,7 @@ The I ran the script.
 The script places the cert in `/etc/letsencrypt/live/YOURDOMAIN/`, so I
 copied the certs to my local dir.
 
-    sudo bash -c `cp -L /etc/letsencrypt/live/MYDOMAIN/* ./ssl/`
+    sudo bash -c 'cp -L /etc/letsencrypt/live/MYDOMAIN/* ./ssl/'
 
 Create HTML
 -----------
@@ -51,6 +50,8 @@ Now you run the container like so
       --publish=443:443 \
       teeny-webserver
 
+Done
+----
+
 You should be able to email the person and tell them to visit: https://my.domain.com/
 and use the details you provided to access your senative data.
-
